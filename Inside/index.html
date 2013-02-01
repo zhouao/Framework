@@ -4,37 +4,43 @@
 <title> New Document </title>
 <script src="/UI/Libs/base/sea.js/v1.3.0/dist/sea-debug.js" require="jquery:/UI/Libs/base/jquery/v1.9.0/jquery" data-main="/UI/Scripts/init"></script>
 <script>
-(function init(master,self,name){
+(function $program(master,self,name){
+	var system;
 	if(name==null || name<=""){
 		name="$system";
 	}
 	if(master==self){
-		master[name]={
+		master[name]=system={
 			enable:false,
 			all:{},
 			runtime:{},
 			locator:{}
 		};
 	}else{
-		return master[name];
+		self[name]=system=master[name];
+	}
+	var current;
+	function currentInitilize(){
+		self["$current"]=
 	}
 })(window.top,this);
 
 var $current = {
 	id:null,
-	schema:{},
-	model:{
+	schema:null,
+	model:null,
+	view:null,
+	feature:null,
+	parent:null,
+	runtime:null
+};
+{
 		username:"zhouao",
 		password:"123456",
 		email:"zhouao@zhouao.com",
 		age:25,
 		married:true
-	},
-	view:{},
-	feature:{},
-	parent:null,
-	runtime:null
-};
+	}
 function getDefaultReturnData(modifies){
 	var d = {
 		status:0,
