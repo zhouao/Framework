@@ -1,0 +1,23 @@
+{
+  "name": "seajs",
+  "version": "2.0.0",
+  "description": "A Module Loader for the Web",
+  "homepage": "http://seajs.org/",
+  "keywords": [
+    "loader",
+    "module",
+    "CMD",
+    "browser"
+  ],
+  "author": "Frank Wang <lifesinger@gmail.com>",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "dependencies": [],
+  "repository": {
+    "type": "git",
+    "url" : "git://github.com/seajs/seajs.git"
+  },
+  "main": "./lib/sea-node.js",
+  "preferGlobal": true
+}

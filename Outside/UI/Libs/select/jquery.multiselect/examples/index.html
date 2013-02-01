@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>JqueryMultiSelect Example</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/jquery.multiselect.css" media="all">
+		<script type="text/javascript" src="../vendor/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.multiselect.js"></script>
+		<script type="text/javascript">
+			names = [
+				"Alejandra Pizarnik",
+				["Alicia Partnoy", "alicia"],
+				{caption: "Andres Rivera", value: "andres"},
+				"Antonio Porchia",
+				"Arturo Andres Roig",
+				"Felipe Pigna",
+				"Gustavo Nielsen",
+				"Hector German Oesterheld",
+				"Juan Carlos Portantiero",
+				"Juan L. Ortiz",
+				"Manuel Mujica Lainez",
+				"Manuel Puig",
+				"Mario Rodriguez Cobos",
+				"Olga Orozco",
+				"Osvaldo Tierra",
+				"Ricardo Piglia",
+				"Ricardo Rojas",
+				"Roberto Payro",
+				"Silvina Ocampo",
+				"Victoria Ocampo",
+				"Zuriel Barron"
+			]
+
+			$(function() {
+				$("#sample-tags").multiselect({completions: names});
+				$("#sample-select").multiselect();
+			});
+		</script>
+	</head>
+	<body>
+		<input type="text" name="tags" id="sample-tags" value="initial,values,andres" />
+		<select multiple="multiple" size="5" id="sample-select" name="sample-select">
+			<option value="car" selected="selected">Car</option>
+			<option value="ship">Ship</option>
+			<option value="bus" selected="selected">Bus</option>
+		</select>
+	</body>
+</html>

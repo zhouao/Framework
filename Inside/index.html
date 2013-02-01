@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:ao>
+<head>
+<title> New Document </title>
+<script src="/UI/Libs/base/sea.js/v1.3.0/dist/sea-debug.js" require="jquery:/UI/Libs/base/jquery/v1.9.0/jquery" data-main="/UI/Scripts/init"></script>
+<script>
+(function init(master,self,name){
+	if(name==null || name<=""){
+		name="$system";
+	}
+	if(master==self){
+		master[name]={
+			enable:false,
+			all:{},
+			runtime:{},
+			locator:{}
+		};
+	}else{
+		return master[name];
+	}
+})(window.top,this);
+
+var $current = {
+	id:null,
+	schema:{},
+	model:{
+		username:"zhouao",
+		password:"123456",
+		email:"zhouao@zhouao.com",
+		age:25,
+		married:true
+	},
+	view:{},
+	feature:{},
+	parent:null,
+	runtime:null
+};
+function getDefaultReturnData(modifies){
+	var d = {
+		status:0,
+		result:null,
+		data:null,
+		message:null,
+		next:{type:0,detail:null},
+		time:null
+	};
+	if(modifies != null){
+		for (var key in modifies)
+		{
+			d[key] = modifies[key];
+		}
+		if(typeof(d.next.type) == "undefined" || d.next.type == null){
+			d.next.type = 0;
+		}
+	}
+	return d;
+}
+function asReturnData(response){
+	var typename = typeof(response);
+	if(typename == "undefined" || response == null){
+		return getDefaultReturnData();
+	}
+	var modifies = null;
+	if(typename == "string" && response != ""){
+		modifies = {data:response};
+	}else{
+		modifies = response;
+	}
+	getDefaultReturnData(modifies);
+}
+
+</script>
+<ao:template id="t1" style="display:none;">
+<div style="border:1px solid #e1e1e1;height:100px;width:100px;" name="b1"></div>
+</ao:template>
+</head>
+<body>
+
+<script>
+function addBox(){
+	$("body").append($("#t1").find("[name='b1']").clone(true));
+}
+</script>
+用户名:<ao:var name="username"></ao:var>
+<ao:var>
+密码:<input type="text" var="value:password"/>
+Email:<input type="text" var="value:email"/>
+年龄:<input type="text" var="value:age"/>
+<ao:novar>
+已婚:<input type="checkbox" var="checked:married"/>
+</ao:novar>
+</ao:var>
+<button onclick="addBox();">Add a box</button>
+
+<script>
+
+function test(a){
+	if(a==null){
+		alert("cc");
+	}
+}
+test();
+seajs.on("complete",function(jquery){
+	$("ao\\:var").each(function(){
+		var $this=$(this);
+		var $children=$this.children(":not(ao\\:novar) [var]");
+		if($children.length>0){
+			$children.each(function(){
+				var element=$(this);
+				var binds=element.attr("var").split(':');
+				var attributename=binds[0];
+				var varname=binds[1];
+				element.attr(attributename,$current.model[varname]);
+			});
+		}else{
+			$this.html($current.model[$this.attr("name")]);
+		}
+		$this.show();
+	});
+});
+</script>
+</body>
+</html>

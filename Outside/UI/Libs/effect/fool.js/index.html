@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Fool.js &mdash; I pity the user!</title>
+		
+		<link rel="stylesheet" href="assets/fool.css">
+		
+		<script src="//code.jquery.com/jquery-latest.min.js"></script>
+		<script src="fool.min.js"></script>
+		
+		<!-- and the js that powers the mini site -->
+		<script src="assets/site.js"></script>
+	</head>
+	
+	<body>
+	
+		<nav>
+			<h1>Fool<i>.js</i></h1>
+			<h2>The April Fools' Day jQuery plugin</h2>
+			
+			<ul>
+				<li class="usage"><a href="#usage">Usage</a></li>
+				<li class="options"><a href="#options">Pranks</a></li>
+				<li class="download"><a href="#download">Download</a></li>
+			</ul>
+		</nav>
+		
+		<div class="panels">
+			<div id="usage">
+				<p>As a long-running fan of both practical jokes and the A-Team, I love April Fools' Day. So much, in fact, that it's like a birthday to me. And what kind of birthday would it be if I didn't give presents? Probably the day I was actually born.</p>
+				<p>Anyway, this is a jQuery plugin that lets you play one or more fun practical jokes on an unsuspecting visitor, and it's crazy easy to set up. Just check the usage below <i>(It's commented, don't worry)</i>.</p>
+				
+				
+				<h2>Usage</h2>
+				<pre>$(document).ready(function() { <span class="comment">//  When the document is ready</span>
+	$.fool('rick'); //  Run the Rick Astley prank
+});</pre>
+				<p>Of course, if you really hate your users, you can run multiple pranks by calling <code>$.fool</code> with an object:</p>
+				<pre>$.fool({
+	hiddenVideos: true, <span class="comment">//  Show some wonderfully annoying videos</span>
+	vanishingElements: true, <span class="comment">//  Hide random elements as they interact</span>
+});</pre>
+			</div>
+			
+			<div id="options">
+				<h2>Pranks</h2>
+				<p>Of course, Rick Astley is just the beginning. There's a whole range of fun options to use. Click any of the options to preview them.<b>NOTE: These will ruin the browsing experience. Get ready to refresh.</b></p>
+								
+				<pre><a>fallingScrollbar: true,   <span class="comment">//  Want the scrollbar to fall over?</span></a>
+<a>rick: true,               <span class="comment">//  The synonymous Rick Astley video, hidden off-screen</span></a>
+<a>hiddenVideos: true,       <span class="comment">//  Show some wonderfully annoying videos</span></a>
+<a>vanishingElements: true,  <span class="comment">//  Hide random elements as they interact</span></a>
+<a>questionTime: true,       <span class="comment">//  Sing Spongebob with your browser!</span></a>
+<a>upsideDown: true,         <span class="comment">//  Flip the page upside down!</span></a>
+<a>h4xx0r: true,             <span class="comment">//  Make the page 100% editable</span></a>
+<a>wonky: true,              <span class="comment">//  Make the page a little bit crooked</span></a>
+<a>flash: true,              <span class="comment">//  Makes the site flash on and off</span></a>
+<a>crashAndBurn: true,       <span class="comment">//  Runs an endless loop. This will kill your browser!</span></a>
+<a>shutter: true,            <span class="comment">//  Forces a shutter on the screen</span></a>
+<a>unclickable: true,        <span class="comment">//  Makes the page unclickable</span></a>
+</pre>
+			</div>
+			
+			<div id="download">
+				<h2>Download</h2>
+				<p>You're a bad, bad, person. But hey, aren't we all? The source code is on <a href="https://github.com/visualidiot/Fool.js">Github</a>, but you can grab a copy here:</p>
+				
+				<a class="download" href="https://github.com/visualidiot/Fool.js/zipball/master">Go download it!</a>
+				
+				<p>It's licensed under the <a href="//licence.visualidiot.com">:) licence</a>, so go nuts.</p>
+				
+				<small>A midnight project by <a href="//visualidiot.com">Visual Idiot</a> (yes, that's his name). Go <a href="//twitter.com/idiot">stalk him on Twitter</a>.</small>
+			</div>
+		</div>
+		
+		<div class="tweet">
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://fooljs.com" data-via="idiot" data-related="idiot">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+		
+	<script>
+		var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-30485980-1']); _gaq.push(['_trackPageview']);
+		
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	
+	</body>
+</html>
